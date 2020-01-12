@@ -3,12 +3,15 @@ class Movie
   NEW_RELEASE = 1
   CHILDRENS = 2
 
-  attr_reader :title
-  attr_accessor :price_code
+  attr_reader :title, :price_code
 
   def initialize(title, price_code)
     @title = title
-    @price_code = price_code
+    self.price_code = price_code
+  end
+
+  def price_code=(value)
+    @price_code = value
   end
 
   def charge(days_rented)
