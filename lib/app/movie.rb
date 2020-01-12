@@ -25,7 +25,7 @@ class Movie
     when REGULAR
       result = @price.charge(days_rented)
     when NEW_RELEASE
-      result += days_rented * 3
+      result = @price.charge(days_rented)
     when CHILDRENS
       result += 1.5
       result += (days_rented - 3) * 1.5 if days_rented > 3
