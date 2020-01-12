@@ -1,4 +1,7 @@
 require_relative "../lib/app/movie"
+require_relative "../lib/app/regular_price"
+require_relative "../lib/app/new_release_price"
+require_relative "../lib/app/childrens_price"
 require_relative "../lib/app/rental"
 require_relative "../lib/app/customer"
 

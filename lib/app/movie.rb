@@ -12,14 +12,18 @@ class Movie
 
   def price_code=(value)
     @price_code = value
+    @price = case price_code
+             when REGULAR then RegularPrice.new
+             when NEW_RELEASE then NewReleasePrice.new
+             when CHILDRENS then ChildrensPrice.new
+             end
   end
 
   def charge(days_rented)
     result = 0
     case price_code
     when REGULAR
-      result += 2
-      result += (days_rented - 2) * 1.5 if days_rented > 2
+      result = @price.charge(days_rented)
     when NEW_RELEASE
       result += days_rented * 3
     when CHILDRENS
